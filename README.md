@@ -19,7 +19,7 @@ docker run <tag_name>
 ### 1. Create an IAM Role
 In your AWS Account, create a new IAM Role with the permissions you deem necessary. The role must include permissions to create/update/delete resources in the following services.
 
-  - [EC2 Container Registry](https://aws.amazon.com/sns/) - This can be achieved with `AmazonEC2ContainerRegistryFullAccess` policy.
+  - [EC2 Container Registry](https://aws.amazon.com/ecr/) - This can be achieved with `AmazonEC2ContainerRegistryFullAccess` policy.
 
 ### 2. Configure OpenID to connect AWS and GitHub Actions
 Refer to GitHub's docs for [Configuring OpenID Connect in AWS](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services) for guidance.
