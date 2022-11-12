@@ -9,11 +9,11 @@ date = time.strftime('%Y-%m-%d', time.localtime(current_time))
 folder = f"{date}/"
 
 def handler(event, context):
-   # Make folder to download files locally
-   os.makedirs('/tmp/{folder}')
+    # Make folder to download files locally
+    os.makedirs('/tmp/{folder}')
 
-   s3_client = boto3.client("s3")
-   # TODO - handle scenarios where there are > 1000 objects in bucket (this is unlikely since we're only getting the things in the "folder")
+    s3_client = boto3.client("s3")
+    # TODO - handle scenarios where there are > 1000 objects in bucket (this is unlikely since we're only getting the things in the "folder")
     response = s3_client.list_objects_v2(Bucket=bucket_name, Prefix=folder)
     s3_objects = response.get("Contents")
     
